@@ -1,0 +1,13 @@
+// Shared TanStack Query hooks.
+import { useQuery } from "@tanstack/react-query";
+import { apiGet } from "./api";
+import type { User } from "./types";
+
+export function useMe() {
+  return useQuery({
+    queryKey: ["me"],
+    queryFn: () => apiGet<User | null>("/auth/me"),
+    staleTime: 60_000,
+    retry: false,
+  });
+}
