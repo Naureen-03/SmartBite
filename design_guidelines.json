@@ -1,0 +1,507 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "project_name": "SmartBite",
+  "version": "1.0.0",
+  "description": "Comprehensive UI/UX design blueprint for SmartBite — an intelligent, multi-role Food Delivery and Order Ecosystem (FastAPI + MongoDB, React 19 + Vite + Tailwind v4 + shadcn/ui base-nova).",
+  "locale": {
+    "country": "India",
+    "currency_symbol": "₹",
+    "currency_code": "INR",
+    "number_format": "en-IN (e.g., ₹1,299 or ₹250)",
+    "date_format": "DD MMM YYYY, hh:mm A (e.g., 24 Oct 2026, 08:30 PM)",
+    "veg_indicator_style": "Green dot in green square border (Veg) vs Red/Brown dot in red square border (Non-Veg) — strict Indian food labeling standard"
+  },
+  "design_philosophy": {
+    "archetype": "Organic & Earthy with High-Appetite Warmth (Earthy Charcoal, Saffron Apricot, Fresh Basil, Warm Cream)",
+    "anti_patterns_avoided": [
+      "No generic AI purple/indigo gradients (#7351B7 strictly banned)",
+      "No cold clinical glassmorphism for food cards",
+      "No Inter font for headings (uses Plus Jakarta Sans for punchy, friendly authority and DM Sans for body)",
+      "No center-everything alignment",
+      "No flat untextured hero blocks — warm terracotta and saffron accents ground the culinary experience"
+    ],
+    "key_principles": [
+      "Appetizing Tactility: Warm natural backgrounds (#FAF7F2), crisp micro-borders, elevated card geometry",
+      "Density with Breathing Room: High-information role dashboards with strict bento grids and asymmetric customer discovery",
+      "Radical Transparency: Clear breakdown badges, allergen chips, budget fit trackers, live freshness stage meter",
+      "Mobile-First Touch Precision: 48px touch targets, sticky bottom action bars for mobile carts, responsive drawer filters"
+    ]
+  },
+  "typography": {
+    "heading_font": "Plus Jakarta Sans, sans-serif",
+    "heading_font_import": "@import \"@fontsource-variable/plus-jakarta-sans\";",
+    "body_font": "DM Sans, sans-serif",
+    "body_font_import": "@import \"@fontsource-variable/dm-sans\";",
+    "mono_font": "JetBrains Mono, monospace",
+    "mono_font_import": "@import \"@fontsource-variable/jetbrains-mono\";",
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 22,
+      "body": 16,
+      "caption": 14
+    },
+    "typesetting_rules": {
+      "headlines": "tracking-tight font-extrabold leading-tight text-neutral-900 dark:text-neutral-50",
+      "subheadings": "tracking-normal font-semibold leading-snug text-neutral-700 dark:text-neutral-200",
+      "labels_overlines": "uppercase text-xs font-bold tracking-[0.18em] text-amber-800 dark:text-amber-400",
+      "body_copy": "text-base font-normal leading-relaxed text-neutral-800 dark:text-neutral-200",
+      "numbers_currency": "font-bold tracking-tight font-heading tabular-nums"
+    }
+  },
+  "colors": {
+    "accent": "#E65100",
+    "on_accent": "#FFFFFF",
+    "secondary_accent": "#15803D",
+    "on_secondary_accent": "#FFFFFF",
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#FAF7F2",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#57534E",
+        "roles": {
+          "link": "#C2410C",
+          "error": "#B91C1C",
+          "success": "#15803D",
+          "warning": "#B45309"
+        }
+      },
+      {
+        "name": "page_dark",
+        "kind": "solid",
+        "bg": "#121110",
+        "on_bg": "#F5F5F4",
+        "on_bg_muted": "#A8A29E",
+        "roles": {
+          "link": "#FB923C",
+          "error": "#F87171",
+          "success": "#4ADE80",
+          "warning": "#FBBF24"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#57534E",
+        "roles": {
+          "link": "#C2410C",
+          "error": "#B91C1C",
+          "success": "#15803D",
+          "warning": "#B45309"
+        }
+      },
+      {
+        "name": "panel_dark",
+        "kind": "solid",
+        "bg": "#1C1A18",
+        "on_bg": "#F5F5F4",
+        "on_bg_muted": "#A8A29E",
+        "roles": {
+          "link": "#FB923C",
+          "error": "#F87171",
+          "success": "#4ADE80",
+          "warning": "#FBBF24"
+        }
+      },
+      {
+        "name": "card_elevated",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#57534E"
+      },
+      {
+        "name": "card_elevated_dark",
+        "kind": "solid",
+        "bg": "#262320",
+        "on_bg": "#F5F5F4",
+        "on_bg_muted": "#A8A29E"
+      },
+      {
+        "name": "badge_veg",
+        "kind": "solid",
+        "bg": "#DCFCE7",
+        "on_bg": "#14532D",
+        "on_bg_muted": "#166534"
+      },
+      {
+        "name": "badge_non_veg",
+        "kind": "solid",
+        "bg": "#FEE2E2",
+        "on_bg": "#7F1D1D",
+        "on_bg_muted": "#991B1B"
+      },
+      {
+        "name": "badge_surplus",
+        "kind": "solid",
+        "bg": "#FEF3C7",
+        "on_bg": "#78350F",
+        "on_bg_muted": "#92400E"
+      },
+      {
+        "name": "badge_eco",
+        "kind": "solid",
+        "bg": "#E0F2FE",
+        "on_bg": "#075985",
+        "on_bg_muted": "#0369A1"
+      },
+      {
+        "name": "hero",
+        "kind": "image",
+        "contrast_against": "#1C1917",
+        "guarantee": "scrim: linear-gradient(180deg, rgba(28,25,23,0.85) 0%, rgba(28,25,23,0.65) 60%, rgba(28,25,23,0.92) 100%)",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#E7E5E4",
+        "roles": {
+          "link": "#FDBA74",
+          "error": "#FCA5A5",
+          "success": "#86EFAC"
+        }
+      },
+      {
+        "name": "sticky_header",
+        "kind": "glass",
+        "contrast_against": "#FFFFFF",
+        "guarantee": "backdrop-blur-xl bg-white/85 dark:bg-[#121110]/85 border-b border-stone-200/80 dark:border-stone-800/80",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#57534E"
+      }
+    ]
+  },
+  "entry_surfaces": {
+    "/": "asymmetric culinary discovery hero with interactive budget slider + AI heuristic recommender pills left, live Bento food showcase right",
+    "/login": "split branded auth — warm culinary mission & live platform stats left, role-switching login form right",
+    "/register": "split branded auth — multi-role selector (Customer, Restaurant, Delivery Partner) left, step-wise onboarding form right",
+    "/customer": "curated marketplace feed with smart budget discovery header, surplus meal flash deals ribbon, and categorized bento restaurant cards",
+    "/restaurant/:id": "restaurant header with hygiene & freshness scorecards, sticky category navigation, allergen-safe dish cards with ingredient customization modal",
+    "/cart": "split checkout with per-person split bill calculator, delivery batching discount toggle, and itemized transparent fee breakdown",
+    "/tracking/:orderId": "live interactive 5-stage Freshness & Prep tracker with simulated GPS courier route map, temperature & ETA badge",
+    "/group-order/:id": "collaborative ordering room with live member carts, bill-splitting breakdown, and master checkout lock",
+    "/dashboard/restaurant": "high-density order dispatch queue, kitchen prep timer, menu availability toggles, and Recharts revenue/popularity analytics",
+    "/dashboard/delivery": "mobile-first delivery cockpit with batch request acceptance, smart route optimization map, and daily earnings breakdown",
+    "/dashboard/admin": "ecosystem oversight with live order matrix, partner verification approvals, NGO surplus distribution log, and Recharts fraud anomaly graph"
+  },
+  "role_architecture": {
+    "customer": {
+      "theme_accent": "Warm Saffron (#E65100)",
+      "primary_views": [
+        "Personalized Discovery & AI Recommendation",
+        "Smart Budget Meal Finder (exact cap including taxes + delivery)",
+        "Surplus Deals & Smart Waste Saver (<60% off pre-closing)",
+        "Restaurant Details & Allergen Filter Menu",
+        "Group Order Room with Shareable Link",
+        "Subscription & Scheduled Meal Planner (Weekly Tiffin)",
+        "Live 5-Stage Order Tracking + Interactive Courier Map",
+        "Order History with 1-Click Reorder"
+      ]
+    },
+    "restaurant": {
+      "theme_accent": "Emerald Freshness (#15803D)",
+      "primary_views": [
+        "Live Kitchen Dispatch Matrix (New / Preparing / Ready / Picked Up)",
+        "Prep Time & Kitchen Load Adjuster",
+        "Smart Menu & Inventory Manager (Price, Out of stock, Surplus discount tags)",
+        "Daily Revenue & Popular Dish Analytics (Recharts Bar/Area charts)",
+        "NGO Surplus Food Donation Dispatcher"
+      ]
+    },
+    "delivery": {
+      "theme_accent": "Volt Blue / Amber Hybrid (#0284C7 / #D97706)",
+      "primary_views": [
+        "Available Order Batches (Multi-drop route optimizer)",
+        "Active Trip Cockpit (Pickup PIN, Customer Nav, Delivery Proof)",
+        "Earnings & Fuel Incentive Tracker",
+        "Shift & Vehicle Mode Switch (Bike / EV / Cycle)"
+      ]
+    },
+    "admin": {
+      "theme_accent": "Deep Slate (#334155)",
+      "primary_views": [
+        "Platform Ecosystem Health Metrics",
+        "Restaurant & Courier Approval Queue",
+        "Live Order Monitoring & Dispute Resolution",
+        "Commission & Fee Configurator (Platform Fee, Surge, Green Packaging)",
+        "NGO Food Sharing & Waste Reduction Audit Log",
+        "Fraud Detection & Anomaly Radar"
+      ]
+    }
+  },
+  "layout_and_grids": {
+    "customer_home": {
+      "pattern": "Bento Discovery Grid",
+      "grid_classes": "grid grid-cols-1 md:grid-cols-12 gap-6 p-4 md:p-8",
+      "modules": {
+        "budget_finder_hero": "col-span-12 lg:col-span-8 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-transparent border border-orange-200/60 dark:border-orange-900/30 rounded-3xl p-6 md:p-8",
+        "ai_recommendation_card": "col-span-12 lg:col-span-4 bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800 rounded-3xl p-6 shadow-sm",
+        "surplus_waste_saver_rail": "col-span-12 bg-amber-500/10 border border-amber-300/60 dark:border-amber-900/40 rounded-3xl p-6",
+        "restaurant_cards_grid": "col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      }
+    },
+    "restaurant_cards": {
+      "style": "Modern Bento with High Contrast Badges",
+      "features": [
+        "Image container with 16:10 aspect ratio and rounded-2xl overflow-hidden",
+        "Floating badges: ETA (e.g. '24 mins'), Rating (★ 4.8), Eco-Packaging badge",
+        "Pure Veg / Multi-Cuisine indicators with official color dots",
+        "Price for two (e.g. '₹350 for two') and transparent delivery tag ('₹25 delivery or FREE with batching')"
+      ]
+    },
+    "dish_cards": {
+      "style": "Horizontal & Vertical hybrid with tactile counter",
+      "features": [
+        "Official Indian Veg/Non-Veg icon (square box with filled circle)",
+        "Spice Level Meter (Mild, Medium, Fiery)",
+        "Allergen warning tags (Gluten-Free, Nut-Free, Dairy-Free)",
+        "Customization indicator ('Customisable' badge)",
+        "Direct Stepper button (+ / -) that transitions smoothly with Motion"
+      ]
+    },
+    "order_tracking": {
+      "style": "5-Stage Freshness Pulse Tracker",
+      "stages": [
+        "Order Confirmed & Payment Verified",
+        "Kitchen Accepted & Chef Preparing (Freshness Meter Active)",
+        "Quality Packed with Tamper-Proof Seal",
+        "Handed to Delivery Partner (Live Courier Transit)",
+        "Delivered at Doorstep"
+      ],
+      "map_treatment": "Simulated Leaflet / Canvas visual route with pulsing delivery bike marker and real-time distance countdown"
+    },
+    "dashboards_grid": {
+      "pattern": "High Density Metric + Action Matrix",
+      "grid_classes": "grid grid-cols-1 md:grid-cols-4 gap-4 p-4 md:p-6",
+      "kpi_cards": "col-span-1 bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800 rounded-2xl p-5 shadow-xs",
+      "main_action_table": "col-span-1 md:col-span-3 bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800 rounded-2xl p-6 shadow-xs",
+      "side_activity_feed": "col-span-1 bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800 rounded-2xl p-6 shadow-xs"
+    }
+  },
+  "differentiators_ui_specs": {
+    "1_smart_budget_discovery": {
+      "ui_pattern": "Interactive Dial / Range Slider with Live Cart Matcher",
+      "description": "User sets budget (e.g., ₹250). System displays curated combos where Food + GST (5%) + Delivery + Platform fee <= ₹250. No surprise checkout price jumps."
+    },
+    "2_ai_recommendation_engine": {
+      "ui_pattern": "Dynamic Heuristic Context Chips",
+      "description": "Chips for 'Rainy Evening Warmers', 'High Protein Post-Workout (>30g)', 'Low Calorie Light Bites (<450 kcal)', 'Under 25 Mins Flash Prep'."
+    },
+    "3_group_ordering_bill_split": {
+      "ui_pattern": "Collaborative Order Board with Avatar Carts",
+      "description": "Unique 6-digit room code or QR. Shows live member items ('Aman: 1x Paneer Tikka', 'Priya: 1x Burrito Bowl'). Options: Equal Split, Itemized Split, or Host Pays."
+    },
+    "4_smart_food_waste_reduction": {
+      "ui_pattern": "Flash Surplus Deal Banners with Countdown Timer",
+      "description": "Gold/amber themed 'Saver Hour' badge. Shows original price vs 40-60% discounted rescue price and remaining portions (e.g., 'Only 3 left before 10 PM close')."
+    },
+    "5_transparent_pricing_module": {
+      "ui_pattern": "Interactive Accordion Price Ledger",
+      "description": "Item subtotal + Restaurant Packaging + Delivery Partner Fee (distance calculated) + Platform Fee (₹5) + Govt Taxes (GST 5%) - Batching Discount. Clear tooltip explaining every rupee."
+    },
+    "6_scheduled_subscription_meals": {
+      "ui_pattern": "Weekly Calendar Slot Selector (Tiffin Mode)",
+      "description": "7-day interactive lunch/dinner grid. Users can skip dates with 1 tap, choose cuisine rotation (e.g., North Indian Homestyle, Healthy Keto Bowls), and auto-debit summary."
+    },
+    "7_allergen_and_ingredient_transparency": {
+      "ui_pattern": "Expandable Nutritional & Allergen Safety Card",
+      "description": "Full macro breakdown (Calories, Protein, Carbs, Fats) + high-visibility allergen icons + checkbox for custom instructions (e.g., 'No onions', 'Less spicy', 'Gluten-free crust')."
+    },
+    "8_smart_delivery_batching": {
+      "ui_pattern": "Eco-Batching Option at Checkout",
+      "description": "'Combine with a neighbor's order within 500m to save ₹30 delivery fee and reduce 0.8 kg carbon emission' with leaf indicator."
+    },
+    "9_community_food_sharing": {
+      "ui_pattern": "NGO Surplus Donation Hub (Restaurant & Admin)",
+      "description": "Restaurants tap 'Donate 15 Surplus Meals' → Verified NGO partners (e.g., Feeding India / Robin Hood Army) receive instant pickup request with food safety temp stamp."
+    },
+    "10_food_freshness_tracker": {
+      "ui_pattern": "Live Animated Prep Timeline + Simulated GPS Route",
+      "description": "5-phase tracker featuring step glow, chef prep timer, temperature indicator (hot packed at 68°C), and moving courier bike icon on route preview."
+    }
+  },
+  "motion": {
+    "engine": "motion/react",
+    "patterns": {
+      "page_transition": {
+        "initial": "{ opacity: 0, y: 12 }",
+        "animate": "{ opacity: 1, y: 0 }",
+        "exit": "{ opacity: 0, y: -12 }",
+        "transition": "{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }"
+      },
+      "card_hover": {
+        "whileHover": "{ y: -4, transition: { duration: 0.2, ease: 'easeOut' } }",
+        "whileTap": "{ scale: 0.98 }"
+      },
+      "cart_item_stepper": {
+        "layout": true,
+        "initial": "{ scale: 0.8, opacity: 0 }",
+        "animate": "{ scale: 1, opacity: 1 }",
+        "exit": "{ scale: 0.8, opacity: 0 }",
+        "transition": "{ type: 'spring', stiffness: 500, damping: 30 }"
+      },
+      "freshness_pulse": {
+        "animate": "{ scale: [1, 1.08, 1], opacity: [0.8, 1, 0.8] }",
+        "transition": "{ duration: 2, repeat: Infinity, ease: 'easeInOut' }"
+      }
+    },
+    "accessibility": {
+      "prefers_reduced_motion": "All motion components must check `useReducedMotion()` or fallback to simple opacity transitions when enabled."
+    }
+  },
+  "chart_guidelines": {
+    "library": "recharts (pre-installed, import from @/lib/recharts)",
+    "color_palette": [
+      "#E65100",
+      "#15803D",
+      "#0284C7",
+      "#D97706",
+      "#8B5CF6",
+      "#EC4899"
+    ],
+    "chart_types_per_dashboard": {
+      "restaurant_dashboard": {
+        "revenue_trend": "AreaChart with gradient fill (Primary Orange #E65100 to transparent) and custom tooltip showing Net Sales, GST, and Commission",
+        "popular_dishes": "Horizontal BarChart displaying top 5 items by order count and customer reorder %"
+      },
+      "delivery_dashboard": {
+        "weekly_earnings": "BarChart showing base payout + surge incentives + tips per weekday"
+      },
+      "admin_dashboard": {
+        "platform_volume": "Stacked AreaChart showing GMV across Cuisines and Peak Hours",
+        "waste_reduction_impact": "ComposedChart (Bars: Meals Saved, Line: CO2 Avoided in kg)"
+      }
+    }
+  },
+  "image_urls": {
+    "gourmet_signature": [
+      {
+        "url": "https://images.unsplash.com/photo-1543992321-cefacfc2322e?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "restaurant_hero_and_featured_dish",
+        "description": "Artisan Asian Dumplings & Gourmet Platter with fresh greens"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1565895405227-31cffbe0cf86?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "fine_dining_restaurant",
+        "description": "Warm ambient gourmet dining table with curated dishes and wine"
+      },
+      {
+        "url": "https://images.pexels.com/photos/5531093/pexels-photo-5531093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "italian_specialty",
+        "description": "Gourmet Creamy Spaghetti with wild mushrooms and garden spinach"
+      },
+      {
+        "url": "https://images.pexels.com/photos/8864543/pexels-photo-8864543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "continental_grill",
+        "description": "Tender Grilled Steak with creamy mushroom risotto"
+      }
+    ],
+    "healthy_and_bowls": [
+      {
+        "url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "healthy_nutrition_bowls",
+        "description": "Rainbow Superfood Harvest Salad Bowl with avocado and chickpeas"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "protein_bowls",
+        "description": "Teriyaki Tofu & Fresh Crisp Veggie Protein Bowl"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "all_day_breakfast",
+        "description": "Poached Farm Egg Power Bowl with heirloom tomatoes"
+      },
+      {
+        "url": "https://images.pexels.com/photos/842545/pexels-photo-842545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "grilled_caesar",
+        "description": "Fresh Herb & Grilled Chicken Caesar Bowl on rustic wood"
+      }
+    ],
+    "pizzas_and_street_delights": [
+      {
+        "url": "https://images.unsplash.com/photo-1788537894870-3e1bafa1fdf6?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "category": "wood_fired_pizza",
+        "description": "Wood-Fired Neapolitan Pizza with bell peppers, olives and pesto swirl"
+      },
+      {
+        "url": "https://images.pexels.com/photos/28308010/pexels-photo-28308010.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "combo_meals",
+        "description": "Gourmet Artisan Burger with Wood-Fired Pizza Slice Combo"
+      },
+      {
+        "url": "https://images.pexels.com/photos/20321807/pexels-photo-20321807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "party_group_order",
+        "description": "Sunlit Feast Table with Burger, Pasta, Salad and Dessert spreads"
+      }
+    ]
+  },
+  "component_hierarchy_and_paths": {
+    "app_shell": "frontend/src/App.tsx",
+    "css_theme_entry": "frontend/src/index.css",
+    "pages": {
+      "Home": "frontend/src/pages/Home.tsx (Customer Discovery, Budget tool, Surplus Flash, AI Recommendations)",
+      "RestaurantDetail": "frontend/src/pages/RestaurantDetail.tsx (Menu, Category tabs, Allergen badges, Customizer modal)",
+      "CartCheckout": "frontend/src/pages/CartCheckout.tsx (Split bill, Eco-batching discount, Transparent breakdown)",
+      "OrderTracking": "frontend/src/pages/OrderTracking.tsx (5-Stage Freshness tracker, Simulated route, ETA pulse)",
+      "GroupOrder": "frontend/src/pages/GroupOrder.tsx (Room code, live member carts, split-payment)",
+      "RestaurantDashboard": "frontend/src/pages/RestaurantDashboard.tsx (Live order queue, prep timer, menu manager, analytics, NGO surplus)",
+      "DeliveryDashboard": "frontend/src/pages/DeliveryDashboard.tsx (Batch requests, route cockpit, daily earnings, shift toggle)",
+      "AdminDashboard": "frontend/src/pages/AdminDashboard.tsx (Ecosystem oversight, approvals, complaints, fraud radar, NGO logs)",
+      "Login": "frontend/src/pages/Login.tsx (Branded split screen, quick role demo switcher)",
+      "Register": "frontend/src/pages/Register.tsx (Multi-role registration with onboarding questionnaire)"
+    },
+    "custom_components": {
+      "Navbar": "frontend/src/components/Navbar.tsx (Role indicator, location selector, cart badge, search modal trigger)",
+      "Footer": "frontend/src/components/Footer.tsx (Warm dark background, Indian food hygiene accreditation badges, quick role links)",
+      "BudgetSliderModal": "frontend/src/components/BudgetSliderModal.tsx (Smart max-budget meal combo matcher)",
+      "AllergenFilterDrawer": "frontend/src/components/AllergenFilterDrawer.tsx (Veg/Non-veg, Vegan, Gluten-Free, Nut-Free, Calorie cap)",
+      "TransparentPriceBreakdown": "frontend/src/components/TransparentPriceBreakdown.tsx (Itemized tax, packaging, delivery, batch discount)",
+      "FreshnessTrackerCard": "frontend/src/components/FreshnessTrackerCard.tsx (5-stage live status with animated pulse)",
+      "GroupOrderLobby": "frontend/src/components/GroupOrderLobby.tsx (Real-time participant carts & split-pay options)",
+      "NGOShareModal": "frontend/src/components/NGOShareModal.tsx (Surplus food handover to verified hunger-relief partners)"
+    },
+    "ui_primitives": "frontend/src/components/ui/*.tsx (badge, button, calendar, card, checkbox, dialog, dropdown-menu, input, label, popover, select, sheet, sonner, table, tabs, textarea)"
+  },
+  "testing_attributes_strategy": {
+    "rule": "Every interactive and crucial display element MUST have a clear data-testid attribute in kebab-case.",
+    "key_test_ids": [
+      "data-testid=\"nav-logo\"",
+      "data-testid=\"nav-role-switcher\"",
+      "data-testid=\"nav-cart-button\"",
+      "data-testid=\"budget-slider-input\"",
+      "data-testid=\"budget-find-meals-button\"",
+      "data-testid=\"ai-recommendation-chip\"",
+      "data-testid=\"surplus-deal-card\"",
+      "data-testid=\"restaurant-card\"",
+      "data-testid=\"dish-add-to-cart-button\"",
+      "data-testid=\"dish-stepper-increment\"",
+      "data-testid=\"dish-stepper-decrement\"",
+      "data-testid=\"cart-checkout-button\"",
+      "data-testid=\"split-bill-toggle\"",
+      "data-testid=\"eco-batching-checkbox\"",
+      "data-testid=\"price-breakdown-subtotal\"",
+      "data-testid=\"price-breakdown-total\"",
+      "data-testid=\"order-track-stage-indicator\"",
+      "data-testid=\"restaurant-accept-order-btn\"",
+      "data-testid=\"restaurant-prep-time-slider\"",
+      "data-testid=\"restaurant-donate-surplus-btn\"",
+      "data-testid=\"delivery-accept-batch-btn\"",
+      "data-testid=\"delivery-confirm-pickup-btn\"",
+      "data-testid=\"admin-resolve-dispute-btn\"",
+      "data-testid=\"admin-ngo-audit-table\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. THEME & COLORS: Retheme 'frontend/src/index.css' to use warm culinary tones (Warm White #FAF7F2 page background, Deep Saffron #E65100 accent, Emerald Basil #15803D secondary). Use @fontsource-variable/plus-jakarta-sans for headers and @fontsource-variable/dm-sans for body copy. Dark theme must use Charcoal #121110 with warm stone borders (#262320).",
+    "2. LOCALE & CURRENCY: Use Indian Rupee ('₹') formatting throughout. Use the official Veg/Non-Veg symbol (Green square with green filled dot for Veg, Red square with red filled dot for Non-Veg).",
+    "3. ROLE SWITCHING & AUTH: Provide a seamless, visible Demo Role Switcher in the top navigation or banner (Customer, Restaurant Partner, Delivery Hero, Platform Admin) so reviewers and testing agents can switch and experience all 4 ecosystems instantly without tedious re-logins.",
+    "4. SEED DATA & MOCK FLOWS: Seed realistic Indian restaurants (e.g., 'Saffron & Spice Kitchen', 'Bao & Bowl Co.', 'Artisan Crust Pizza Lab', 'Green Harvest Deli', 'Dilli Darbar Biryani') with categorized menus, dietary tags, allergen info, surplus deals, and transparent pricing breakdowns.",
+    "5. UNIQUE DIFFERENTIATORS: Implement all 10 confirmed differentiators visibly in the UI: (1) Smart Budget Slider on Home, (2) AI Weather/Calorie Heuristic Recommendation pills, (3) Group Order Room with Bill Split, (4) Surplus Food Rescue Deals with countdown timers, (5) Itemized Transparent Checkout Breakdown, (6) 7-Day Tiffin Meal Scheduler, (7) Detailed Allergen & Ingredient disclosure modal, (8) Eco-Batching delivery fee saver toggle, (9) NGO Community Food Share button on Restaurant Dashboard, (10) 5-stage Freshness & Courier Tracking screen with animated bike transit.",
+    "6. CHARTS & ANALYTICS: Use Recharts (importing from @/lib/recharts) for the Restaurant, Delivery, and Admin dashboards (Revenue Trends, Top Selling Dishes, Payouts & Tips, Food Waste Avoided).",
+    "7. NOTIFICATIONS & FEEDBACK: Use Sonner ('toast.success()', 'toast.info()') for immediate tactile feedback on adding to cart, accepting orders, splitting bills, and dispatching deliveries.",
+    "8. COMPONENT CONTRACTS: Use base-ui friendly props with render={<Link />} or buttonVariants({ variant, size }) for routing buttons. Ensure no empty or broken routes in App.tsx."
+  ]
+}
