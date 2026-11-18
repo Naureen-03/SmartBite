@@ -47,7 +47,7 @@ export default defineConfig(async () => {
     ],
     resolve: {
       alias: [
-        { find: "@", replacement: path.resolve(__dirname, "./src") },
+        { find: "@", replacement: path.resolve(__dirname, ".") },
         // lucide 1.x dropped brand logos; src/lib/lucide-react.tsx restores them on top of the real package.
         { find: /^lucide-react$/, replacement: path.resolve(__dirname, "./src/lib/lucide-react.tsx") },
         { find: "lucide-react-upstream", replacement: path.resolve(__dirname, "./node_modules/lucide-react") },
